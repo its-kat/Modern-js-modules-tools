@@ -63,6 +63,7 @@ console.log(lastPost2);
 
 //the only purpose of this function is to create a new scope and return data just once.
 // this works because of closures
+/*
 const ShoppingCart2 = (function () {
   const cart = [];
   const shippingCost = 10;
@@ -92,3 +93,18 @@ ShoppingCart2.addToCart('apples', 4);
 ShoppingCart2.addToCart('pizza', 2);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
+*/
+
+//////////////////////////////
+// CommonJS - specification syntax
+
+//Export
+// export.addToCart  = function (product, quantity) {
+//   cart.push({ product, quantity });
+//   console.log(
+//     `${quantity} ${product} added to cart (shipping cost is ${shippingCost})`
+//   );
+// };
+
+//Import
+// const  { addToCart } = require('./shippingCart.js')
