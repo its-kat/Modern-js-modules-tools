@@ -55,15 +55,15 @@ console.log(lastPost);
 // lastPost.then(last => console.log(last));
 
 //using top-level await to access resolved value
-const lastPost2 = await getlastPost();
-console.log(lastPost2);
+// const lastPost2 = await getlastPost();
+// console.log(lastPost2);
 
 //////////////////////////////
 // Module Pattern
 
 //the only purpose of this function is to create a new scope and return data just once.
 // this works because of closures
-/*
+
 const ShoppingCart2 = (function () {
   const cart = [];
   const shippingCost = 10;
@@ -92,8 +92,7 @@ const ShoppingCart2 = (function () {
 ShoppingCart2.addToCart('apples', 4);
 ShoppingCart2.addToCart('pizza', 2);
 console.log(ShoppingCart2);
-console.log(ShoppingCart2.shippingCost);
-*/
+// console.log(ShoppingCart2.shippingCost);
 
 //////////////////////////////
 // CommonJS - specification syntax
@@ -113,8 +112,9 @@ console.log(ShoppingCart2.shippingCost);
 // Command Line
 
 //very hard to copy a nested object.
-
-import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from 'lodash-es';
+import cloneDeep from 'lodash-es';
 
 const state = {
   cart: [
@@ -136,3 +136,9 @@ console.log(stateClone);
 
 //lodash
 console.log(stateDeepClone);
+
+if (module.hot) {
+  module.hot.accept(function () {
+    init();
+  });
+}
